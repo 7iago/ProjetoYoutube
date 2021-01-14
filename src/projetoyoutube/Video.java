@@ -1,14 +1,14 @@
 package projetoyoutube;
 public class Video implements AcoesVideo {
     private String titulo;
-    private int avaliavao;
+    private int avaliacao;
     private int views;
     private int curtidas;
     private boolean reproduzindo;
 
     public Video(String titulo) {
         this.titulo = titulo;
-        this.avaliavao = 1;
+        this.avaliacao = 1;
         this.views = 0;
         this.curtidas = 0;
         this.reproduzindo = false;
@@ -22,11 +22,13 @@ public class Video implements AcoesVideo {
     }
 
     public int getAvaliavao() {
-        return avaliavao;
+        return avaliacao;
     }
 
-    public void setAvaliavao(int avaliavao) {
-        this.avaliavao = avaliavao;
+    public void setAvaliacao(int avaliacao) {
+        int nova;
+        nova = (int) ((this.avaliacao + avaliacao)/this.views);
+        this.avaliacao = nova;
     }
 
     public int getViews() {
@@ -69,7 +71,7 @@ public class Video implements AcoesVideo {
 
     @Override
     public String toString() {
-        return "Video{" + "titulo=" + titulo + ", avaliavao=" + avaliavao + ", views=" + views + ", curtidas=" + curtidas + ", reproduzindo=" + reproduzindo + '}';
+        return "Video{" + "titulo=" + titulo + ", avaliavao=" + avaliacao + ", views=" + views + ", curtidas=" + curtidas + ", reproduzindo=" + reproduzindo + '}';
     }
     
     
